@@ -13,6 +13,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/adlm.css" rel="stylesheet">
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
@@ -68,14 +69,15 @@
 
         tavultesoft.keymanweb.addKeyboards({
           name: 'Adlam',       // Display name of the keyboard
-          id: 'el-ff-adlm',   // ID of the keyboard for reference in code
-          filename: 'js/el-ff-adlm-0.1.js',  // source of the keyboard for dynamic load
+          id: 'el_ff_adlm',   // ID of the keyboard for reference in code
+          filename: 'js/el_ff_adlm-0.1.js',  // source of the keyboard for dynamic load
           version: '0.1',         // version of the keyboard, optional
           language: [{
             name: 'Fula',        // language name for UI elements
             id: 'ff',            // language ID for tagging text
-            region: ''          // region of the language, for UI elements, optional
-          }]
+            region: 'af',         // region of the language, for UI elements, optional
+          }],
+          rtl: true
         });
 
         var ta = document.getElementsByTagName('textarea')[0];
@@ -144,10 +146,15 @@
         </div>
 
         <div class="elos-template">
-            <h1>Keyboard layouts &ndash; Adlam</h1>
-            <p class="lead">Keyman keyboard layouts for Adlam.</p>
-
-            <textarea lang="ff-Adlm" rows="6" cols="60"></textarea>
+            <h1>Keyboard layouts &ndash; <span dir="rtl" lang="ff-Adlm">𞤀𞤣𞤤𞤥</span> (Adlam)</h1>
+            <p class="lead">Keyman keyboard layouts for <span dir="rtl" lang="ff-Adlm">𞤀𞤣𞤤𞤥</span> (Adlam).</p>
+            <ol lang="ff-Adlm" dir="rtl">
+              <li>a</li>
+              <li>b</li>
+            </ol>
+            <div lang="ff-Adlm" dir="rtl">
+              <textarea rows="6" cols="60"></textarea>
+            </div>
 
 
 
