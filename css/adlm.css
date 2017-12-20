@@ -25,9 +25,15 @@
 }
 
 
-.keymanweb-font {
+.keymanweb-font, .kmw-key-text {
   font-family: "NS Adlam" !important;
 }
+
+
+/* body .desktop .kmw-osk-inner-frame {
+  font-family: "NS Adlam" !important;
+} */
+
 
 
 @counter-style adlam {
