@@ -55,9 +55,9 @@ body {
        body .desktop .kmw-key:hover {
          background: #c0c8cf;
        }
-       .kmw-key-text {
+      /* .kmw-key-text {
            font-family: "Andika", "Charis SIL", "Gentium Plus", sans-serif;
-       }
+       } */
        .kmw-key-label {
            display:none;
        }
