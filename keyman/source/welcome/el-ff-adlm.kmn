@@ -1,0 +1,124 @@
+﻿store(&VERSION) '10.0'
+store(&TARGETS) 'any'
+store(&BITMAP) 'el-ff-adlm.ico'
+store(&VISUALKEYBOARD) 'el-ff-adlm.kvk'
+store(&KEYBOARDVERSION) '0.1.1'
+store(&KMW_RTL) '1'
+store(&LAYOUTFILE) 'el-ff-adlm-layout.js'
+store(&COPYRIGHT) '© 2018 Enabling Languages'
+c store(&ETHNOLOGUECODE) 'ful'
+store(&MESSAGE) 'Adlam Unicode keyboard layout'
+store(&NAME) 'Adlam'
+begin Unicode > use(main)
+
+c alif
+store(alefChar) U+1E922 U+1E900
+store(alefKey) [K_A] [SHIFT K_A]      
+
+c vowels
+c store(otherVowelChar)
+c store(otherVowelKey)
+
+c consonants
+
+c supplementary consonants
+store(supplementaryChars) U+1E93E U+1E93F U+1E940 U+1E941 U+1E942 U+1E943 U+1E91C U+1E91D U+1E91E U+1E91F U+1E920 U+1E921
+store(supplementaryKeysWindows) [RALT K_V] [RALT K_H] [RALT K_B] [RALT K_Z] [RALT K_P] [RALT K_S] [SHIFT RALT K_V] [SHIFT RALT K_H] [SHIFT RALT K_B] [SHIFT RALT K_Z] [SHIFT RALT K_P] [SHIFT RALT K_S]
+c store(supplementaryKeysOSX) [ALT K_V] [ALT K_H] [ALT K_B] [ALT K_Z] [ALT K_P] [ALT K_S] [SHIFT ALT K_V] [SHIFT ALT K_H] [SHIFT ALT K_B] [SHIFT ALT K_Z] [SHIFT ALT K_P] [SHIFT ALT K_S]
+store(supplementaryKeysTouch) [T_V_02] [T_H_02] [T_B_02] [T_Z_02] [T_P_02] [T_S_02] [SHIFT T_V_02] [SHIFT T_H_02] [SHIFT T_B_02] [SHIFT T_Z_02] [SHIFT T_P_02] [SHIFT T_S_02]
+
+c digits
+store(digitChar) U+1E951 U+1E952 U+1E953 U+1E954 U+1E955 U+1E956 U+1E957 U+1E958 U+1E959 U+1E950
+store(digitKey) [K_1] [K_2] [K_3] [K_4] [K_5] [K_6] [K_7] [K_8] [K_9] [K_0]
+
+c punctuation
+
+group(main) using keys
+
+c alif, vowels and  vowel lengtheners
++ any(alefKey) >  index(alefChar, 1)  
++ [K_COLON] > U+1E944
+c + any(otherVowelKey) > index(otherVowelChar, 1)
++ [SHIFT K_COLON] > U+1E945
+
+c digits
++ any(digitKey) > index(digitChar, 1)
+
++ [K_COMMA] > U+2E41
++ [K_QUOTE] > U+1E946
++ [SHIFT K_EQUAL] > U+1E947
++ [K_EQUAL] > U+1E94A
++ [K_HYPHEN] > U+1E948
++ [SHIFT K_HYPHEN] > U+1E949
++ [SHIFT K_6] > ')'
++ [SHIFT K_5] > '('
+
++ [SHIFT T_LENGTH] > U+1E945
+
++ [SHIFT K_4] > U+00BB
++ [SHIFT K_3] > U+00AB
++ [SHIFT K_2] > U+203A
++ [SHIFT K_1] > U+2039
++ [SHIFT K_BKQUOTE] > U+2026
++ [K_BKQUOTE] > U+0640
++ [SHIFT K_BKSLASH] > U+1E95E
++ [K_BKSLASH] > '!'
++ [SHIFT K_PERIOD] > ':'
++ [SHIFT K_COMMA] > U+204F
++ [SHIFT K_SLASH] > U+1E95F
++ [K_SLASH] > U+061F
++ [SHIFT K_Z] > U+1E90D
++ [SHIFT K_X] > U+1E90E
++ [SHIFT K_C] > U+1E915
++ [SHIFT K_V] > U+1E907
++ [SHIFT K_B] > U+1E904
++ [SHIFT K_N] > U+1E910
++ [SHIFT K_M] > U+1E903
++ [SHIFT K_S] > U+1E905
++ [SHIFT K_D] > U+1E901
++ [SHIFT K_F] > U+1E90A
++ [SHIFT K_G] > U+1E918
++ [SHIFT K_H] > U+1E916
++ [SHIFT K_J] > U+1E914
++ [SHIFT K_K] > U+1E911
++ [SHIFT K_L] > U+1E902
++ [SHIFT K_Q] > U+1E919
++ [SHIFT K_W] > U+1E90F
++ [SHIFT K_E] > U+1E909
++ [SHIFT K_R] > U+1E908
++ [SHIFT K_T] > U+1E91A
++ [SHIFT K_Y] > U+1E912
++ [SHIFT K_U] > U+1E913
++ [SHIFT K_I] > U+1E90B
++ [SHIFT K_O] > U+1E90C
++ [SHIFT K_P] > U+1E906
++ [SHIFT K_LBRKT] > U+1E91B
++ [SHIFT K_RBRKT] > U+1E917
++ [K_Z] > U+1E92F
++ [K_X] > U+1E930
++ [K_C] > U+1E937
++ [K_V] > U+1E929
++ [K_B] > U+1E926
++ [K_N] > U+1E932
++ [K_M] > U+1E925
++ [K_PERIOD] > '.'
++ [K_S] > U+1E927
++ [K_D] > U+1E923
++ [K_F] > U+1E92C
++ [K_G] > U+1E93A
++ [K_H] > U+1E938
++ [K_J] > U+1E936
++ [K_K] > U+1E933
++ [K_L] > U+1E924
++ [K_Q] > U+1E93B
++ [K_W] > U+1E931
++ [K_E] > U+1E92B
++ [K_R] > U+1E92A
++ [K_T] > U+1E93C
++ [K_Y] > U+1E934
++ [K_U] > U+1E935
++ [K_I] > U+1E92D
++ [K_O] > U+1E92E
++ [K_P] > U+1E928
++ [K_LBRKT] > U+1E93D
++ [K_RBRKT] > U+1E939
