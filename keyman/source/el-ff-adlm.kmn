@@ -2,7 +2,7 @@
 store(&TARGETS) 'any'
 store(&BITMAP) 'el-ff-adlm.ico'
 store(&VISUALKEYBOARD) 'el-ff-adlm.kvk'
-store(&KEYBOARDVERSION) '0.1.1'
+store(&KEYBOARDVERSION) '0.2'
 store(&KMW_RTL) '1'
 store(&LAYOUTFILE) 'el-ff-adlm-layout.js'
 store(&COPYRIGHT) '© 2018 Enabling Languages'
@@ -16,8 +16,9 @@ store(alefChar) U+1E922 U+1E900
 store(alefKey) [K_A] [SHIFT K_A]      
 
 c vowels
-c store(otherVowelChar)
-c store(otherVowelKey)
+store(otherVowelChar) [SHIFT K_E] [SHIFT K_I] [SHIFT K_O] [SHIFT K_U] [K_E] [K_I] [K_I] [K_O] [K_U]
+store(otherVowelKey) U+1E909 U+1E90B U+1E90C U+1E913 U+1E92B U+1E92D U+1E92E U+1E935
+ 
 
 c consonants
 
@@ -35,13 +36,42 @@ c punctuation
 
 group(main) using keys
 
-c alif, vowels and  vowel lengtheners
+c ----------------------------------------
+c
+c alif and lengthener rules
+c     U+1E944 ADLAM ALIF LENGTHENER
+c
+c ----------------------------------------
 + any(alefKey) >  index(alefChar, 1)  
-+ [K_COLON] > U+1E944
-c + any(otherVowelKey) > index(otherVowelChar, 1)
-+ [SHIFT K_COLON] > U+1E945
+U+1E922 + [K_A] > context U+1E944
+U+1E900 + [SHIFT K_A] > context U+1E944
 
+c ----------------------------------------
+c
+c vowel and lengthener rules
+c     U+1E945 ADLAM VOWEL LENGTHENER
+c
+c ----------------------------------------
++ any(otherVowelKey) > index(otherVowelChar, 1)
+U+1E909 + [SHIFT K_E] > context U+1E945
+U+1E90B + [SHIFT K_I] > context U+1E945
+U+1E90C + [SHIFT K_O] > context U+1E945
+U+1E913 + [SHIFT K_U] > context U+1E945
+U+1E92B + [K_E] > context U+1E945
+U+1E92D + [K_I] > context U+1E945
+U+1E92E + [K_O] > context U+1E945
+U+1E935 + [K_U] > context U+1E945
+
+
+ 
+
+
+
+c ----------------------------------------
+c
 c digits
+c
+c ----------------------------------------
 + any(digitKey) > index(digitChar, 1)
 
 + [K_COMMA] > U+2E41
@@ -84,13 +114,9 @@ c digits
 + [SHIFT K_L] > U+1E902
 + [SHIFT K_Q] > U+1E919
 + [SHIFT K_W] > U+1E90F
-+ [SHIFT K_E] > U+1E909
 + [SHIFT K_R] > U+1E908
 + [SHIFT K_T] > U+1E91A
 + [SHIFT K_Y] > U+1E912
-+ [SHIFT K_U] > U+1E913
-+ [SHIFT K_I] > U+1E90B
-+ [SHIFT K_O] > U+1E90C
 + [SHIFT K_P] > U+1E906
 + [SHIFT K_LBRKT] > U+1E91B
 + [SHIFT K_RBRKT] > U+1E917
@@ -112,13 +138,9 @@ c digits
 + [K_L] > U+1E924
 + [K_Q] > U+1E93B
 + [K_W] > U+1E931
-+ [K_E] > U+1E92B
 + [K_R] > U+1E92A
 + [K_T] > U+1E93C
 + [K_Y] > U+1E934
-+ [K_U] > U+1E935
-+ [K_I] > U+1E92D
-+ [K_O] > U+1E92E
 + [K_P] > U+1E928
 + [K_LBRKT] > U+1E93D
 + [K_RBRKT] > U+1E939
